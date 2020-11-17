@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Plants', {
+    await queryInterface.createTable('plants', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,23 +20,23 @@ module.exports = {
       details: {
         type: 'VARCHAR(600)'
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      userId: {
+      user_id: {
         foreignKey: true,
         type: Sequelize.INTEGER
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Plants');
+    await queryInterface.dropTable('plants');
   }
 };

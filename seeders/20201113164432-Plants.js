@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Plants', [
+    return queryInterface.bulkInsert('plants', [
       {
         name:'Pothos Golden',
         img: 'https://cdn.shopify.com/s/files/1/0253/6701/9565/products/Pothos-Golden-Pothos-Kitchen-1_400x400.jpg?v=1602785557',
@@ -66,6 +66,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Plants', null, {});
+    return queryInterface.bulkDelete('plants', null, {});
   }
 };
