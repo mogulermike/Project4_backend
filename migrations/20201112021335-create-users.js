@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+    await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,16 +20,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      is_active : {
+      isActive : {
       defaultValue: true,
       type: Sequelize.BOOLEAN
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
@@ -37,6 +37,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('Users');
   }
 };

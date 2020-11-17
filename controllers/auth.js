@@ -94,8 +94,19 @@ const verifyUser = (req, res) => {
     })
 }
 
+const getAll = (req, res) => {
+    Plant.findAll()
+    .then(plants => {
+        res.status(constants.SUCCESS).json(plants)
+    })
+    .catch(err => {
+        res.status(constants.INTERNAL_SERVER_ERROR).send(`ERROR: ${err}`);
+    })
+}
+
 module.exports = {
     signup,
     login,
-    verifyUser
+    verifyUser,
+    getAll
 }
