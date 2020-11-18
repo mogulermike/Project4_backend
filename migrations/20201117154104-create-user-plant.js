@@ -1,27 +1,27 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('userplants', {
+    await queryInterface.createTable('userPlants', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      plant_id: {
+      plantId: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         defaultValue: new Date(),
         type: Sequelize.DATE
@@ -30,12 +30,12 @@ module.exports = {
     {
       uniqueKeys: {
         actions_unique: {
-            fields: ['user_id', 'plant_id']
+            fields: ['userId', 'plantId']
         }
     }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('userplants');
+    await queryInterface.dropTable('UserPlants');
   }
 };
